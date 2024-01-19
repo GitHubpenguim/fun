@@ -1,0 +1,17 @@
+import requests
+from bs4 import BeautifulSoup
+
+url = 'https://www.example.com/leads'
+response = requests.get(url)
+
+if response.status_code == 200:
+    soup = BeautifulSoup(response.content, 'html.parser')
+    leads = soup.find_all('div', {'class': 'lead'})
+
+    for lead in leads:
+        name = lead.find('h2', {'class': 'name'}).text
+        email = lead.find('a', {'class': 'email'}).text
+        phone = lead.find('span', {'class': 'phone'}).text
+        print(f'Name: {name}\nEmail: {email}\nPhone: {phone}\n')
+else:
+    print('Failed to retrieve leads.')
