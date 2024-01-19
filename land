@@ -1,0 +1,17 @@
+
+import requests
+from bs4 import BeautifulSoup
+
+def search_facebook(query):
+    url = f"https://www.facebook.com/search/pages/?q={query}"
+    response = requests.get(url)
+    soup = BeautifulSoup(response.content, "html.parser")
+    results = soup.find_all("div", {"class": "_32mo"})
+    for result in results:
+        name = result.find("a").text
+        link = result.find("a")["href"]
+        print(f"{name}: {link}")
+
+search_facebook("Lanscapers")
+search_facebook("Builders")
+search_facebook("fence handyman")
