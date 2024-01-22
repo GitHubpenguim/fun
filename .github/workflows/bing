@@ -1,9 +1,11 @@
-import pandas as pd
-import plotly.express as px
-
-# Load data
-data = pd.read_csv('leads.csv')
-
-# Visualize data
-fig = px.scatter(data, x='age', y='income', color='gender', title='Lead Generation')
-fig.show()
+{
+    "configurations": [
+    {
+        "name": "Launch Edge",
+        "request": "launch",
+        "type": "msedge",
+        "url": "https://copilot.microsoft.com/",
+        "webRoot": "${workspaceFolder}"
+    }
+    ]
+}

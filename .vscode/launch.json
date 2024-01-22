@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        },
+    {
+        "name": "Launch Edge",
+        "request": "launch",
+        "type": "msedge",
+        "url": "https://copilot.microsoft.com/",
+        "webRoot": "${workspaceFolder}"
+    }
+    ]
+}
